@@ -410,8 +410,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>濛濛去哪玩呢</h1>
-            <p class="subtitle">不知道跟濛濛出去哪里玩？来一场盛大的冒险吧！</p>
+            <h1>去哪玩呢</h1>
+            <p class="subtitle">不知道出去哪里玩？来一场盛大的冒险吧！</p>
             <div class="divider"></div>
         </div>
         
@@ -422,7 +422,7 @@
         
         <div class="input-group" id="seed-input" style="display: none;">
             <label for="seed">请输入一串有意义的数：</label>
-            <input type="number" id="seed" placeholder="濛濛生日：0719">
+            <input type="number" id="seed" placeholder="小戴生日：0618">
         </div>
         
         <div class="input-group">
@@ -510,15 +510,15 @@
         // 中国旅游城市数据（包含所有地级市，基于2025年行政区划）
         const cities = [
             // 直辖市
-            { name: "北京", province: "北京市", description: "濛濛读大学的地方，想跟她一起去环球。濛濛：拉钩！中国的首都，拥有故宫、长城、天坛等世界文化遗产，融合了古老与现代的独特魅力。" },
-            { name: "上海", province: "上海市", description: "戴老师读大学的地方，想带濛濛去迪士尼。濛濛：那会是我人生中第一次去迪士尼！国际化大都市，外滩、东方明珠、豫园展现了其独特的海派文化和现代都市风貌。" },
-            { name: "天津", province: "天津市", description: "濛濛小时候和姥姥一起生活的地方。濛濛：我最喜欢姥姥啦！北方重要港口城市，以相声、狗不理包子和五大道小洋楼闻名，中西文化交融。" },
-            { name: "重庆", province: "重庆市", description: "濛濛已经去过了，拍了毕业照（为什么北京上学会在重庆也拍）。濛濛：因为我们毕业旅行在重庆！山城、火锅之都，独特的立体城市景观和麻辣美食令人难忘。" },
+            { name: "北京", province: "北京市", description: "中国的首都，拥有故宫、长城、天坛等世界文化遗产，融合了古老与现代的独特魅力。" },
+            { name: "上海", province: "上海市", description: "小戴读大学的地方。国际化大都市，外滩、东方明珠、豫园展现了其独特的海派文化和现代都市风貌。" },
+            { name: "天津", province: "天津市", description: "北方重要港口城市，以相声、狗不理包子和五大道小洋楼闻名，中西文化交融。" },
+            { name: "重庆", province: "重庆市", description: "山城、火锅之都，独特的立体城市景观和麻辣美食令人难忘。" },
             
             // 河北省
             { name: "石家庄", province: "河北省", description: "河北省省会，华北重要交通枢纽，拥有正定古城和西柏坡等红色旅游景点。" },
             { name: "唐山", province: "河北省", description: "唐山大地震好像很严重，不知道有没有影响到姥姥家。北方工业重镇，地震后重建的现代化城市，南湖公园展现生态转型成果。" },
-            { name: "秦皇岛", province: "河北省", description: "濛濛和闺蜜在秦皇岛吵架来着。海滨旅游城市，北戴河、山海关和老龙头是著名旅游胜地。" },
+            { name: "秦皇岛", province: "河北省", description: "海滨旅游城市，北戴河、山海关和老龙头是著名旅游胜地。" },
             { name: "邯郸", province: "河北省", description: "小杨老师的家。国家历史文化名城，拥有三千年未改名的历史，赵文化发源地。" },
             { name: "邢台", province: "河北省", description: "华北历史名城，拥有崆山白云洞、前南峪等自然与人文景观。" },
             { name: "保定", province: "河北省", description: "历史文化名城，直隶总督署、古莲花池和白洋淀是著名景点。" },
@@ -542,7 +542,7 @@
             { name: "吕梁", province: "山西省", description: "革命老区，以碛口古镇和北武当山闻名。" },
             
             // 内蒙古自治区
-            { name: "呼和浩特", province: "内蒙古自治区", description: "濛濛想骑马，让我们红尘作伴，活得潇潇~~内蒙古自治区首府，塞外名城，拥有大召寺和昭君墓等景点。" },
+            { name: "呼和浩特", province: "内蒙古自治区", description: "想骑马，让我们红尘作伴，活得潇潇~~内蒙古自治区首府，塞外名城，拥有大召寺和昭君墓等景点。" },
             { name: "包头", province: "内蒙古自治区", description: "草原钢城，北方重要工业基地，希拉穆仁草原是旅游胜地。" },
             { name: "乌海", province: "内蒙古自治区", description: "黄河明珠，以乌海湖和甘德尔山闻名。" },
             { name: "赤峰", province: "内蒙古自治区", description: "红山文化发祥地，拥有克什克腾旗和乌兰布统草原。" },
@@ -565,22 +565,22 @@
             { name: "辽阳", province: "辽宁省", description: "东北最古老城市之一，拥有白塔和广佑寺等历史建筑。" },
             { name: "盘锦", province: "辽宁省", description: "湿地之都，红海滩是国家独一无二的自然景观。" },
             { name: "铁岭", province: "辽宁省", description: "小品艺术之乡，拥有龙首山和银冈书院等景点。" },
-            { name: "朝阳", province: "辽宁省", description: "濛濛大学就在朝阳区！（虽然是在北京跟这里没什么关系*^▽^*）古生物化石宝库，拥有鸟化石国家地质公园和牛河梁遗址。" },
+            { name: "朝阳", province: "辽宁省", description: "古生物化石宝库，拥有鸟化石国家地质公园和牛河梁遗址。" },
             { name: "葫芦岛", province: "辽宁省", description: "关外第一市，拥有兴城古城和九门口长城等景点。" },
             
             // 吉林省
-            { name: "长春", province: "吉林省", description: "星瑶的老家！吉林省省会，北国春城，汽车城和电影城是其特色。" },
+            { name: "长春", province: "吉林省", description: "吉林省省会，北国春城，汽车城和电影城是其特色。" },
             { name: "吉林", province: "吉林省", description: "雾凇之都，松花江穿城而过，冬季雾凇景观举世闻名。" },
             { name: "四平", province: "吉林省", description: "东北军事重镇，以四平战役纪念馆和叶赫那拉城闻名。" },
             { name: "辽源", province: "吉林省", description: "中国梅花鹿之乡，以农民画和琵琶闻名。" },
             { name: "通化", province: "吉林省", description: "北国山城，以葡萄酒和人参闻名，高句丽文物古迹丰富。" },
-            { name: "白山", province: "吉林省", description: "星瑶的老家x2！长白山腹地城市，拥有长白山天池和望天鹅风景区。" },
+            { name: "白山", province: "吉林省", description: "长白山腹地城市，拥有长白山天池和望天鹅风景区。" },
             { name: "松原", province: "吉林省", description: "松花江畔城市，查干湖冬捕是独特民俗活动。" },
             { name: "白城", province: "吉林省", description: "草原湿地城市，向海自然保护区是丹顶鹤之乡。" },
             
             // 黑龙江省
-            { name: "哈尔滨", province: "黑龙江省", description: "濛濛之前很想去来着，但是冬天太冷被劝退了www黑龙江省省会，冰城，以冰雪大世界和中央大街闻名。" },
-            { name: "齐齐哈尔", province: "黑龙江省", description: "濛濛：好像烤肉很有名来着 流口水.gif 鹤城，扎龙自然保护区是丹顶鹤的故乡。鹤城，扎龙自然保护区是丹顶鹤的故乡。" },
+            { name: "哈尔滨", province: "黑龙江省", description: "之前很想去来着，但是冬天太冷被劝退了www黑龙江省省会，冰城，以冰雪大世界和中央大街闻名。" },
+            { name: "齐齐哈尔", province: "黑龙江省", description: "好像烤肉很有名来着 流口水.gif 鹤城，扎龙自然保护区是丹顶鹤的故乡。鹤城，扎龙自然保护区是丹顶鹤的故乡。" },
             { name: "鸡西", province: "黑龙江省", description: "石墨之都，拥有兴凯湖和乌苏里江等自然景观。" },
             { name: "鹤岗", province: "黑龙江省", description: "边境城市，以煤炭闻名，拥有龙江三峡等景点。" },
             { name: "双鸭山", province: "黑龙江省", description: "是因为有一座山看起来像是两只鸭子在一起吗？乌苏里江畔城市，拥有珍宝岛和雁窝岛等景点。" },
@@ -593,11 +593,11 @@
             { name: "绥化", province: "黑龙江省", description: "寒地黑土之乡，农业发达，拥有金龟山庄等景点。" },
             
             // 江苏省
-            { name: "南京", province: "江苏省", description: "濛濛第一次当伴娘的那个新娘大学就在南京。江苏省省会，六朝古都，拥有中山陵、夫子庙和秦淮河等景点。" },
+            { name: "南京", province: "江苏省", description: "江苏省省会，六朝古都，拥有中山陵、夫子庙和秦淮河等景点。" },
             { name: "无锡", province: "江苏省", description: "太湖明珠，以鼋头渚、灵山大佛和影视基地闻名。" },
             { name: "徐州", province: "江苏省", description: "淮海经济区中心城市，两汉文化发源地，拥有云龙湖和汉文化景区。" },
             { name: "常州", province: "江苏省", description: "龙城，以恐龙园和天宁寺闻名，现代旅游城市。" },
-            { name: "苏州", province: "江苏省", description: "濛濛想看园林。濛濛：点头点头。东方威尼斯，古典园林、小桥流水和昆曲艺术展现了江南水乡的精致。" },
+            { name: "苏州", province: "江苏省", description: "东方威尼斯，古典园林、小桥流水和昆曲艺术展现了江南水乡的精致。" },
             { name: "南通", province: "江苏省", description: "江海门户，拥有狼山和濠河等景点，教育之乡。" },
             { name: "连云港", province: "江苏省", description: "新亚欧大陆桥东端起点，拥有花果山和连岛海滨浴场。" },
             { name: "淮安", province: "江苏省", description: "运河之都，周恩来总理故乡，拥有周恩来纪念馆和漕运博物馆。" },
@@ -608,7 +608,7 @@
             { name: "宿迁", province: "江苏省", description: "项王故里，中国酒都，拥有骆马湖和三台山森林公园。" },
             
             // 浙江省
-            { name: "杭州", province: "浙江省", description: "戴老师和濛濛都去过西湖，濛濛还去了桐庐、千岛湖。浙江省省会，人间天堂，西湖美景、龙井茶和丝绸文化使其成为最具诗意的城市之一。" },
+            { name: "杭州", province: "浙江省", description: "小戴去过西湖。浙江省省会，人间天堂，西湖美景、龙井茶和丝绸文化使其成为最具诗意的城市之一。" },
             { name: "宁波", province: "浙江省", description: "东海之滨，拥有天一阁、溪口和东钱湖等景点。" },
             { name: "温州", province: "浙江省", description: "东南沿海重要商贸城市，以民营经济和雁荡山闻名。" },
             { name: "嘉兴", province: "浙江省", description: "中国共产党诞生地，拥有南湖和乌镇等景点。" },
@@ -628,8 +628,8 @@
             { name: "马鞍山", province: "安徽省", description: "钢城，拥有采石矶和李白墓园。" },
             { name: "淮北", province: "安徽省", description: "能源城市，拥有相山公园和临涣古镇。" },
             { name: "铜陵", province: "安徽省", description: "中国古铜都，拥有天井湖和凤凰山。" },
-            { name: "安庆", province: "安徽省", description: "戴老师的生日也很有意义对吗。濛濛：对！黄梅戏之乡，拥有天柱山和振风塔。" },
-            { name: "黄山", province: "安徽省", description: "黄山也没去爬过，濛濛要征服三山五岳！徽文化发祥地，以黄山风景区闻名世界。" },
+            { name: "安庆", province: "安徽省", description: "小戴的生日很有意义对吗。黄梅戏之乡，拥有天柱山和振风塔。" },
+            { name: "黄山", province: "安徽省", description: "黄山也没去爬过！徽文化发祥地，以黄山风景区闻名世界。" },
             { name: "滁州", province: "安徽省", description: "皖东名城，拥有琅琊山和醉翁亭。" },
             { name: "阜阳", province: "安徽省", description: "皖北重镇，拥有八里河和迪沟生态旅游风景区。" },
             { name: "宿州", province: "安徽省", description: "中国宿州，拥有皇藏峪和五柳风景区。" },
@@ -640,7 +640,7 @@
             
             // 福建省
             { name: "福州", province: "福建省", description: "福建省省会，榕城，拥有三坊七巷和鼓山等景点。" },
-            { name: "厦门", province: "福建省", description: "戴老师可以和我去海边看日落吗？戴老师：很想很想哦！海上花园，鼓浪屿、环岛路和闽南风情使其成为浪漫的海滨城市。" },
+            { name: "厦门", province: "福建省", description: "小戴可以和我去海边看日落吗？小戴：很想很想哦！海上花园，鼓浪屿、环岛路和闽南风情使其成为浪漫的海滨城市。" },
             { name: "莆田", province: "福建省", description: "妈祖故里，拥有湄洲岛和南少林寺。" },
             { name: "三明", province: "福建省", description: "中国绿都，拥有泰宁世界地质公园和桃源洞。" },
             { name: "泉州", province: "福建省", description: "东亚文化之都，古代海上丝绸之路起点，拥有开元寺和清源山。" },
@@ -650,8 +650,8 @@
             { name: "宁德", province: "福建省", description: "山海交融，拥有太姥山和白水洋。" },
             
             // 江西省
-            { name: "南昌", province: "江西省", description: "濛濛滕王阁一游。江西省省会，英雄城，拥有滕王阁和八一起义纪念馆。" },
-            { name: "景德镇", province: "江西省", description: "濛濛当时去买了好多好看的小玩意儿，开心嘿嘿。烧玻璃也好玩！！！！瓷都，千年窑火不断，拥有古窑民俗博览区和瑶里古镇。" },
+            { name: "南昌", province: "江西省", description: "江西省省会，英雄城，拥有滕王阁和八一起义纪念馆。" },
+            { name: "景德镇", province: "江西省", description: "瓷都，千年窑火不断，拥有古窑民俗博览区和瑶里古镇。" },
             { name: "萍乡", province: "江西省", description: "湘赣边陲城市，拥有武功山和安源路矿工人运动纪念馆。" },
             { name: "九江", province: "江西省", description: "江西北大门，拥有庐山和鄱阳湖。" },
             { name: "新余", province: "江西省", description: "仙女下凡地，拥有仙女湖和孔目江湿地公园。" },
@@ -663,27 +663,27 @@
             { name: "上饶", province: "江西省", description: "赣东北明珠，拥有三清山和婺源。" },
             
             // 山东省
-            { name: "济南", province: "山东省", description: "濛濛和老爸去的，趵突泉感觉就是一个在冒泡的大水塘子，不知道大家在看什么。微笑.jpg 山东省省会，泉城，拥有趵突泉、大明湖和千佛山。" },
-            { name: "青岛", province: "山东省", description: "也是濛濛和老爸去的，感觉吃海鲜没选对地方，贵又不好吃。啤酒之城，红瓦绿树、碧海蓝天和德国风情建筑构成独特的城市风貌。" },
-            { name: "淄博", province: "山东省", description: "濛濛：淄博烧烤感觉就是饼卷烧烤啊。齐国故都，拥有齐文化博物馆和蒲松龄故居。" },
+            { name: "济南", province: "山东省", description: "山东省省会，泉城，拥有趵突泉、大明湖和千佛山。" },
+            { name: "青岛", province: "山东省", description: "啤酒之城，红瓦绿树、碧海蓝天和德国风情建筑构成独特的城市风貌。" },
+            { name: "淄博", province: "山东省", description: "齐国故都，拥有齐文化博物馆和蒲松龄故居。" },
             { name: "枣庄", province: "山东省", description: "鲁南明珠，拥有台儿庄古城和微山湖。" },
             { name: "东营", province: "山东省", description: "黄河入海口，拥有黄河三角洲湿地和胜利油田。" },
-            { name: "烟台", province: "山东省", description: "濛濛：烟台苹果!!!葡萄酒城，拥有蓬莱阁和长岛。" },
-            { name: "潍坊", province: "山东省", description: "虽然濛濛小时候放风筝差点磕到眼睛，但是还是很想去放风筝！世界风筝都，拥有杨家埠民间艺术大观园和青州古城。" },
+            { name: "烟台", province: "山东省", description: "烟台苹果!!!葡萄酒城，拥有蓬莱阁和长岛。" },
+            { name: "潍坊", province: "山东省", description: "世界风筝都，拥有杨家埠民间艺术大观园和青州古城。" },
             { name: "济宁", province: "山东省", description: "孔孟之乡，拥有三孔和微山湖。" },
             { name: "泰安", province: "山东省", description: "五岳独尊，泰山所在地，拥有岱庙和泰山风景区。" },
-            { name: "威海", province: "山东省", description: "蓓蓓的老家！海滨小城，干净的海滩、刘公岛和近代海军历史使其别具魅力。" },
-            { name: "日照", province: "山东省", description: "濛濛：这是中国地图的最东边吗？日出初光先照，拥有万平口和日照海滨国家森林公园。" },
+            { name: "威海", province: "山东省", description: "海滨小城，干净的海滩、刘公岛和近代海军历史使其别具魅力。" },
+            { name: "日照", province: "山东省", description: "这是中国地图的最东边吗？日出初光先照，拥有万平口和日照海滨国家森林公园。" },
             { name: "临沂", province: "山东省", description: "书法名城，拥有王羲之故居和沂蒙山。" },
             { name: "德州", province: "山东省", description: "九达天衢，拥有苏禄王墓和董子园。" },
             { name: "聊城", province: "山东省", description: "江北水城，拥有东昌湖和光岳楼。" },
-            { name: "滨州", province: "山东省", description: "戴老师投过滨州学院学报，有机会也想看一眼。濛濛：比较想看戴老师的大作嘿嘿。装作看得懂的样子，推眼镜。渤海之滨，拥有鹤伴山和魏氏庄园。" },
+            { name: "滨州", province: "山东省", description: "小戴投过滨州学院学报，有机会也想看一眼。渤海之滨，拥有鹤伴山和魏氏庄园。" },
             { name: "菏泽", province: "山东省", description: "牡丹之乡，拥有曹州牡丹园和水浒好汉城。" },
             
             // 河南省
-            { name: "郑州", province: "河南省", description: "戴老师的随机旅行到过，嵩山好玩。濛濛：我要去练武术！河南省省会，商都，拥有少林寺、嵩山和黄河风景区。" },
-            { name: "开封", province: "河南省", description: "戴老师的随机旅行到过，清明上河园好玩。八朝古都，拥有清明上河园和龙亭公园。" },
-            { name: "洛阳", province: "河南省", description: "濛濛和室友们去过，还穿了唐装嘿嘿。十三朝古都，拥有龙门石窟、白马寺和牡丹文化。" },
+            { name: "郑州", province: "河南省", description: "小戴的随机旅行到过，嵩山好玩。河南省省会，商都，拥有少林寺、嵩山和黄河风景区。" },
+            { name: "开封", province: "河南省", description: "小戴的随机旅行到过，清明上河园好玩。八朝古都，拥有清明上河园和龙亭公园。" },
+            { name: "洛阳", province: "河南省", description: "十三朝古都，拥有龙门石窟、白马寺和牡丹文化。" },
             { name: "平顶山", province: "河南省", description: "中原煤仓，拥有尧山和中原大佛。" },
             { name: "安阳", province: "河南省", description: "甲骨文故乡，拥有殷墟和红旗渠。" },
             { name: "鹤壁", province: "河南省", description: "诗经淇河，拥有云梦山和淇河湿地。" },
@@ -694,7 +694,7 @@
             { name: "漯河", province: "河南省", description: "食品名城，拥有南街村和沙澧河风景区。" },
             { name: "三门峡", province: "河南省", description: "天鹅之城，拥有虢国博物馆和函谷关。" },
             { name: "南阳", province: "河南省", description: "帝乡，拥有武侯祠和恐龙蛋化石群。" },
-            { name: "商丘", province: "河南省", description: "戴老师的随机旅行到过，但是下雨了，古城还不错。三商之源，拥有商丘古城和芒砀山。" },
+            { name: "商丘", province: "河南省", description: "小戴的随机旅行到过，但是下雨了，古城还不错。三商之源，拥有商丘古城和芒砀山。" },
             { name: "信阳", province: "河南省", description: "北国江南，拥有鸡公山和南湾湖。" },
             { name: "周口", province: "河南省", description: "伏羲故都，拥有太昊陵和关帝庙。" },
             { name: "驻马店", province: "河南省", description: "天中之地，拥有嵖岈山和南海禅寺。" },
@@ -703,27 +703,27 @@
             { name: "武汉", province: "湖北省", description: "疫情的爆发点，希望大家都好！湖北省省会，江城，拥有黄鹤楼、东湖和户部巷。" },
             { name: "黄石", province: "湖北省", description: "青铜古都，拥有仙岛湖和国家矿山公园。" },
             { name: "十堰", province: "湖北省", description: "汽车城，拥有武当山和丹江口水库。" },
-            { name: "宜昌", province: "湖北省", description: "婷钰的老家！三峡门户，拥有三峡大坝和清江画廊。" },
+            { name: "宜昌", province: "湖北省", description: "三峡门户，拥有三峡大坝和清江画廊。" },
             { name: "襄阳", province: "湖北省", description: "三国名城，拥有古隆中和襄阳古城。" },
             { name: "鄂州", province: "湖北省", description: "百湖之市，拥有梁子湖和西山风景区。" },
             { name: "荆门", province: "湖北省", description: "荆楚门户，拥有明显陵和漳河风景区。" },
             { name: "孝感", province: "湖北省", description: "孝文化名城，拥有董永公园和双峰山。" },
             { name: "荆州", province: "湖北省", description: "三国故地，拥有荆州古城和楚王车马阵。" },
-            { name: "黄冈", province: "湖北省", description: "濛濛：做过好多黄冈密卷，坏人！将军之乡，拥有东坡赤壁和大别山。" },
-            { name: "咸宁", province: "湖北省", description: "濛濛：桂花之乡哎，会香香的吗？桂花之乡，拥有九宫山和赤壁古战场。" },
+            { name: "黄冈", province: "湖北省", description: "将军之乡，拥有东坡赤壁和大别山。" },
+            { name: "咸宁", province: "湖北省", description: "桂花之乡，拥有九宫山和赤壁古战场。" },
             { name: "随州", province: "湖北省", description: "炎帝故里，拥有曾侯乙墓和炎帝神农故里。" },
             
             // 湖南省
-            { name: "长沙", province: "湖南省", description: "濛濛比较喜欢的城市，但是戴老师觉得一般。湖南省省会，娱乐之都，拥有岳麓山、橘子洲和天心阁。" },
+            { name: "长沙", province: "湖南省", description: "小戴觉得一般。湖南省省会，娱乐之都，拥有岳麓山、橘子洲和天心阁。" },
             { name: "株洲", province: "湖南省", description: "火车拉来的城市，拥有炎帝陵和神农谷。" },
             { name: "湘潭", province: "湖南省", description: "伟人故里，拥有韶山和彭德怀纪念馆。" },
             { name: "衡阳", province: "湖南省", description: "雁城，拥有南岳衡山和石鼓书院。" },
             { name: "邵阳", province: "湖南省", description: "宝庆古城，拥有崀山和南山牧场。" },
             { name: "岳阳", province: "湖南省", description: "湘北门户，拥有岳阳楼和洞庭湖。" },
             { name: "常德", province: "湖南省", description: "桃花源里的城市，拥有桃花源和柳叶湖。" },
-            { name: "张家界", province: "湖南省", description: "戴老师认为最精彩的一次旅行。奇峰异石，张家界国家森林公园的独特石英砂岩峰林景观举世闻名。" },
+            { name: "张家界", province: "湖南省", description: "小戴认为最精彩的一次旅行。奇峰异石，张家界国家森林公园的独特石英砂岩峰林景观举世闻名。" },
             { name: "益阳", province: "湖南省", description: "银城，拥有桃花江竹海和茶马古道。" },
-            { name: "郴州", province: "湖南省", description: "现在也还记得的一句诗：‘郴江幸自绕郴山，为谁流下潇湘去’。戴老师：这么有文化，不管你是谁，别从濛濛身上下来湖南南大门，拥有东江湖和莽山。" },
+            { name: "郴州", province: "湖南省", description: "湖南南大门，拥有东江湖和莽山。" },
             { name: "永州", province: "湖南省", description: "潇湘之源，拥有九嶷山和柳子庙。" },
             { name: "怀化", province: "湖南省", description: "滇黔门户，拥有洪江古商城和芷江受降纪念坊。" },
             { name: "娄底", province: "湖南省", description: "湘中明珠，拥有紫鹊界梯田和梅山龙宫。" },
@@ -731,9 +731,9 @@
             // 广东省
             { name: "广州", province: "广东省", description: "广东省省会，花城，岭南文化中心，美食之都，拥有白云山、珠江夜游和丰富的历史遗迹。" },
             { name: "韶关", province: "广东省", description: "粤北门户，拥有丹霞山和南华寺。" },
-            { name: "深圳", province: "广东省", description: "濛濛去过！出海好玩！中国硅谷，现代化创新城市，主题公园和滨海风光吸引大量游客。" },
+            { name: "深圳", province: "广东省", description: "中国硅谷，现代化创新城市，主题公园和滨海风光吸引大量游客。" },
             { name: "珠海", province: "广东省", description: "百岛之市，拥有长隆海洋王国和情侣路。" },
-            { name: "汕头", province: "广东省", description: "濛濛出差去过，但是还没好好吃上一次生腌www潮汕文化发祥地，拥有南澳岛和陈慈黉故居。" },
+            { name: "汕头", province: "广东省", description: "潮汕文化发祥地，拥有南澳岛和陈慈黉故居。" },
             { name: "佛山", province: "广东省", description: "武术之乡，拥有祖庙和西樵山。" },
             { name: "江门", province: "广东省", description: "中国侨都，拥有开平碉楼和上下川岛。" },
             { name: "湛江", province: "广东省", description: "南方港城，拥有湖光岩和东海岛。" },
@@ -742,7 +742,7 @@
             { name: "惠州", province: "广东省", description: "岭南名郡，拥有西湖和罗浮山。" },
             { name: "梅州", province: "广东省", description: "世界客都，拥有雁南飞茶田和客天下。" },
             { name: "汕尾", province: "广东省", description: "滨海新城，拥有红海湾和凤山祖庙。" },
-            { name: "河源", province: "广东省", description: "没怎么听过，但是濛濛生日随机到了这里。万绿河源，拥有万绿湖和镜花缘。" },
+            { name: "河源", province: "广东省", description: "万绿河源，拥有万绿湖和镜花缘。" },
             { name: "阳江", province: "广东省", description: "风筝之乡，拥有海陵岛和凌霄岩。" },
             { name: "清远", province: "广东省", description: "珠三角后花园，拥有英西峰林和古龙峡。" },
             { name: "东莞", province: "广东省", description: "世界工厂，拥有虎门炮台和松山湖。" },
@@ -754,9 +754,9 @@
             // 广西壮族自治区
             { name: "南宁", province: "广西壮族自治区", description: "广西首府，绿城，拥有青秀山和南湖公园。" },
             { name: "柳州", province: "广西壮族自治区", description: "工业重镇，拥有柳侯公园和百里柳江。" },
-            { name: "桂林", province: "广西壮族自治区", description: "戴老师带父母去过，很好玩。濛濛也想去。山水甲天下，漓江风光和喀斯特地貌构成了如诗如画的自然景观。" },
+            { name: "桂林", province: "广西壮族自治区", description: "小戴带父母去过，很好玩。山水甲天下，漓江风光和喀斯特地貌构成了如诗如画的自然景观。" },
             { name: "梧州", province: "广西壮族自治区", description: "广西东大门，拥有骑楼城和白云山。" },
-            { name: "北海", province: "广西壮族自治区", description: "戴老师带父母去过，看海不错选择。滨海旅游城市，拥有银滩和涠洲岛。" },
+            { name: "北海", province: "广西壮族自治区", description: "小戴带父母去过，看海不错选择。滨海旅游城市，拥有银滩和涠洲岛。" },
             { name: "防城港", province: "广西壮族自治区", description: "西南门户，拥有金滩和十万大山。" },
             { name: "钦州", province: "广西壮族自治区", description: "海豚之乡，拥有三娘湾和八寨沟。" },
             { name: "贵港", province: "广西壮族自治区", description: "荷城，拥有桂平西山和东湖。" },
@@ -769,33 +769,33 @@
             
             // 海南省
             { name: "海口", province: "海南省", description: "海南省省会，椰城，拥有骑楼老街和火山口地质公园。" },
-            { name: "三亚", province: "海南省", description: "濛濛：想去！想住那种在水上的会晃的床嘿嘿。热带天堂，阳光、沙滩和椰林使其成为中国最佳海滨度假胜地。" },
+            { name: "三亚", province: "海南省", description: "热带天堂，阳光、沙滩和椰林使其成为中国最佳海滨度假胜地。" },
             { name: "三沙", province: "海南省", description: "中国最南端地级市，拥有西沙群岛和南海诸岛。" },
             { name: "儋州", province: "海南省", description: "海南西线城市，拥有东坡书院和石花水洞。" },
             
             // 四川省
-            { name: "成都", province: "四川省", description: "戴老师和濛濛的故乡。四川省省会，天府之国，以大熊猫、川菜和悠闲生活方式闻名，是一座来了就不想走的城市。" },
-            { name: "自贡", province: "四川省", description: "濛濛去过，体验很差哼（但是恐龙博物馆还行）。千年盐都，拥有自贡恐龙博物馆和彩灯公园。" },
+            { name: "成都", province: "四川省", description: "小戴的故乡。四川省省会，天府之国，以大熊猫、川菜和悠闲生活方式闻名，是一座来了就不想走的城市。" },
+            { name: "自贡", province: "四川省", description: "千年盐都，拥有自贡恐龙博物馆和彩灯公园。" },
             { name: "攀枝花", province: "四川省", description: "钒钛之都，拥有二滩国家森林公园和格萨拉。" },
-            { name: "泸州", province: "四川省", description: "濛濛：已经忘记泸州老窖是什么香型的白酒啦！戴老师：酱香型！不对，茅台才是酱香，我也想不起来了！酒城，拥有泸州老窖旅游区和张坝桂圆林。" },
+            { name: "泸州", province: "四川省", description: "酒城，拥有泸州老窖旅游区和张坝桂圆林。" },
             { name: "德阳", province: "四川省", description: "古蜀之源，拥有三星堆和绵竹年画村。" },
             { name: "绵阳", province: "四川省", description: "科技之城，拥有李白故里和北川羌城。" },
             { name: "广元", province: "四川省", description: "女皇故里，拥有剑门关和皇泽寺。" },
             { name: "遂宁", province: "四川省", description: "观音故里，拥有灵泉寺和中国死海。" },
             { name: "内江", province: "四川省", description: "甜城，拥有张大千纪念馆和隆昌石牌坊。" },
-            { name: "乐山", province: "四川省", description: "濛濛：馋甜皮鸭。山水之城，拥有乐山大佛和峨眉山。" },
-            { name: "南充", province: "四川省", description: "濛濛爸爸的老家。果城，拥有阆中古城和朱德故里。" },
+            { name: "乐山", province: "四川省", description: "山水之城，拥有乐山大佛和峨眉山。" },
+            { name: "南充", province: "四川省", description: "。果城，拥有阆中古城和朱德故里。" },
             { name: "眉山", province: "四川省", description: "东坡故里，拥有三苏祠和瓦屋山。" },
             { name: "宜宾", province: "四川省", description: "万里长江第一城，拥有蜀南竹海和李庄古镇。" },
             { name: "广安", province: "四川省", description: "伟人故里，拥有邓小平故里和华蓥山。" },
             { name: "达州", province: "四川省", description: "川东明珠，拥有真佛山和賨人谷。" },
             { name: "雅安", province: "四川省", description: "雨城，拥有碧峰峡和蒙顶山。" },
             { name: "巴中", province: "四川省", description: "红色沃土，拥有光雾山和诺水河。" },
-            { name: "资阳", province: "四川省", description: "戴老师外婆老家，去过一次，有种别样的感觉。西部车城，拥有安岳石刻和陈毅故里。" },
-            { name: "阿坝州", province: "四川省", description: "很喜欢这里，可玩的太多了，徒步或是九寨都是好选择。濛濛：秋天是去九寨沟最好的季节！" },
+            { name: "资阳", province: "四川省", description: "小戴外婆老家，去过一次，有种别样的感觉。西部车城，拥有安岳石刻和陈毅故里。" },
+            { name: "阿坝州", province: "四川省", description: "很喜欢这里，可玩的太多了，徒步或是九寨都是好选择。秋天是去九寨沟最好的季节！" },
             
             // 贵州省
-            { name: "贵阳", province: "贵州省", description: "濛濛喜欢的小七孔！戴老师：领导让我没去成贵州，必须找机会去一次。贵州省省会，森林之城，凉爽的气候、青岩古镇和黔灵山公园构成独特的旅游体验。" },
+            { name: "贵阳", province: "贵州省", description: "小戴：领导让我没去成贵州，必须找机会去一次。贵州省省会，森林之城，凉爽的气候、青岩古镇和黔灵山公园构成独特的旅游体验。" },
             { name: "六盘水", province: "贵州省", description: "中国凉都，拥有玉舍森林公园和乌蒙大草原。" },
             { name: "遵义", province: "贵州省", description: "红色圣地，拥有遵义会议会址和赤水丹霞。" },
             { name: "安顺", province: "贵州省", description: "瀑布之乡，拥有黄果树瀑布和龙宫。" },
@@ -803,7 +803,7 @@
             { name: "铜仁", province: "贵州省", description: "黔东门户，拥有梵净山和苗王城。" },
             
             // 云南省
-            { name: "昆明", province: "云南省", description: "濛濛：小时候和爸妈开车去大理，结果大雪封山被困在昆明啦！云南省省会，春城，四季如春的气候、滇池和石林使其成为理想的旅游目的地。" },
+            { name: "昆明", province: "云南省", description: "云南省省会，春城，四季如春的气候、滇池和石林使其成为理想的旅游目的地。" },
             { name: "曲靖", province: "云南省", description: "滇黔锁钥，拥有罗平油菜花海和珠江源。" },
             { name: "玉溪", province: "云南省", description: "云烟之乡，拥有抚仙湖和哀牢山。" },
             { name: "保山", province: "云南省", description: "滇西文献名邦，拥有腾冲火山热海和和顺古镇。" },
@@ -813,7 +813,7 @@
             { name: "临沧", province: "云南省", description: "恒春之都，拥有翁丁佤寨和沧源崖画。" },
             
             // 西藏自治区
-            { name: "拉萨", province: "西藏自治区", description: "濛濛和妈妈只有一点点高反！西藏自治区首府，日光城，布达拉宫、大昭寺和藏传佛教文化使其成为神秘的高原圣地。" },
+            { name: "拉萨", province: "西藏自治区", description: "西藏自治区首府，日光城，布达拉宫、大昭寺和藏传佛教文化使其成为神秘的高原圣地。" },
             { name: "日喀则", province: "西藏自治区", description: "后藏中心，拥有扎什伦布寺和珠穆朗玛峰。" },
             { name: "昌都", province: "西藏自治区", description: "藏东明珠，拥有强巴林寺和然乌湖。" },
             { name: "林芝", province: "西藏自治区", description: "西藏江南，拥有雅鲁藏布大峡谷和南迦巴瓦峰。" },
@@ -821,20 +821,20 @@
             { name: "那曲", province: "西藏自治区", description: "羌塘草原，拥有纳木错和羌塘自然保护区。" },
             
             // 陕西省
-            { name: "西安", province: "陕西省", description: "戴老师去过，很喜欢这里，但是会流鼻血。濛濛：为什么喜欢这里呀。陕西省省会，千年古都，兵马俑、古城墙和大雁塔见证了中国古代文明的辉煌。" },
+            { name: "西安", province: "陕西省", description: "小戴去过，很喜欢这里，但是会流鼻血。陕西省省会，千年古都，兵马俑、古城墙和大雁塔见证了中国古代文明的辉煌。" },
             { name: "铜川", province: "陕西省", description: "关中北部城市，拥有药王山和照金香山。" },
             { name: "宝鸡", province: "陕西省", description: "炎帝故里，拥有法门寺和太白山。" },
             { name: "咸阳", province: "陕西省", description: "中国第一帝都，拥有乾陵和汉阳陵。" },
-            { name: "渭南", province: "陕西省", description: "戴老师爬华山累个半死，为什么背着电脑爬华山啊喂！东府之地，拥有华山和司马迁祠。" },
+            { name: "渭南", province: "陕西省", description: "小戴爬华山累个半死，为什么背着电脑爬华山啊喂！东府之地，拥有华山和司马迁祠。" },
             { name: "延安", province: "陕西省", description: "革命圣地，拥有宝塔山和黄帝陵。" },
             { name: "汉中", province: "陕西省", description: "汉家发祥地，拥有石门栈道和武侯墓。" },
-            { name: "榆林", province: "陕西省", description: "戴老师在陕西会流鼻血，不知道濛濛能习惯吗？塞上名城，拥有镇北台和红石峡。" },
+            { name: "榆林", province: "陕西省", description: "塞上名城，拥有镇北台和红石峡。" },
             { name: "安康", province: "陕西省", description: "秦巴明珠，拥有瀛湖和香溪洞。" },
             { name: "商洛", province: "陕西省", description: "秦岭腹地，拥有金丝峡和牛背梁。" },
             
             // 甘肃省
-            { name: "兰州", province: "甘肃省", description: "濛濛走了青甘大环线，很喜欢。濛濛：嗯嗯。甘肃省省会，黄河之都，拥有黄河铁桥和白塔山。" },
-            { name: "嘉峪关", province: "甘肃省", description: "濛濛：如果我觉得一般会挨打吗 探头.jpg 天下第一雄关，拥有嘉峪关关城和方特欢乐世界。" },
+            { name: "兰州", province: "甘肃省", description: "甘肃省省会，黄河之都，拥有黄河铁桥和白塔山。" },
+            { name: "嘉峪关", province: "甘肃省", description: "天下第一雄关，拥有嘉峪关关城和方特欢乐世界。" },
             { name: "金昌", province: "甘肃省", description: "镍都，拥有紫金花海和骊靬古城。" },
             { name: "白银", province: "甘肃省", description: "铜城，拥有黄河石林和会宁会师旧址。" },
             { name: "天水", province: "甘肃省", description: "陇上江南，拥有麦积山石窟和伏羲庙。" },
@@ -847,7 +847,7 @@
             { name: "陇南", province: "甘肃省", description: "陇上江南，拥有官鹅沟和万象洞。" },
             
             // 青海省
-            { name: "西宁", province: "青海省", description: "濛濛走了青甘大环线，很喜欢。濛濛：嗯嗯x2。青海省省会，夏都，拥有塔尔寺和东关清真大寺。" },
+            { name: "西宁", province: "青海省", description: "青海省省会，夏都，拥有塔尔寺和东关清真大寺。" },
             { name: "海东", province: "青海省", description: "河湟文化发祥地，拥有互助土族故土园和瞿昙寺。" },
             
             // 宁夏回族自治区
@@ -858,7 +858,7 @@
             { name: "中卫", province: "宁夏回族自治区", description: "沙漠水城，拥有沙坡头和腾格里沙漠。" },
             
             // 新疆维吾尔自治区
-            { name: "乌鲁木齐", province: "新疆维吾尔自治区", description: "濛濛和我都期待去的新疆。濛濛：那我们得多请几天。新疆首府，亚心之都，拥有天山天池和大巴扎。" },
+            { name: "乌鲁木齐", province: "新疆维吾尔自治区", description: "新疆首府，亚心之都，拥有天山天池和大巴扎。" },
             { name: "克拉玛依", province: "新疆维吾尔自治区", description: "石油之城，拥有魔鬼城和黑油山。" },
             { name: "吐鲁番", province: "新疆维吾尔自治区", description: "火洲，拥有葡萄沟和火焰山。" },
             { name: "哈密", province: "新疆维吾尔自治区", description: "新疆门户，拥有哈密王景区和巴里坤草原。" }
